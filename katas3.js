@@ -3,12 +3,19 @@ const sampleArray = [469, 755, 244, 245, 758, 450, 302, 20, 712, 71, 456, 21, 39
 const corpo = document.getElementsByTagName('body')[0]
 
 function showResults(value, title){
-    let tituloResultado = document.createElement('h2')
-    tituloResultado.innerText = title
-    corpo.appendChild(tituloResultado)
+    // criando header e adicionando no corpo
+    let cabecalho = document.createElement('header');
+    corpo.appendChild(cabecalho);
+
+    //criando h2 e adicionando no header
+    let tituloResultado = document.createElement('h2');
+    tituloResultado.innerText = title;
+    cabecalho.appendChild(tituloResultado);
+
+    //criando paragrafo e adicionando no header
     let resultado =  document.createElement('p');
     resultado.innerText += '(' +  value  + ')';
-    corpo.appendChild(resultado);
+    cabecalho.appendChild(resultado);
     return resultado
     
 }
@@ -215,7 +222,7 @@ function kata14() {
     }
     return showResults (result, 'Kata 14');
 }
-console.log(kata14())
+kata14()
 
 const number = [1, 2 ,3 ,4 , 5 ,6 ,7 , 8 ,9 , 10] 
 
